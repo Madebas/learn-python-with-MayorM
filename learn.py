@@ -1019,3 +1019,119 @@ print("Recursion Example Results:")
 tri_recursion(6)
 #In this example, the function tri_recursion calculates the sum of numbers from k down to 0 using recursion.
 #It prints the intermediate results as it goes through the recursive calls.
+
+     #~~~~~~Python Arrays~~~~~~
+#An array is a collection of items stored at contiguous memory locations.
+#An array is a special variable, which can hold more than one value at a time
+#In Python, you can use the array module to create arrays, but lists are more commonly used for similar purposes.
+import array as arr
+#Creating an array of integers
+my_array = arr.array('i', [1, 2, 3, 4, 5])  # 'i' indicates an array of integers
+print(my_array)  # Output: array('i', [1, 2, 3, 4, 5])
+
+
+  #----Python OOP------
+#Object-Oriented Programming (OOP) is a programming paradigm that uses objects to represent data and methods to manipulate that data.
+#In Python, you can create classes to define objects and their behavior.
+#A class is a blueprint for creating objects, and an object is an instance of a class
+#Creating a Class
+class MyClass:
+    x = 5  # Class attribute
+#In this example, MyClass is a class with a class attribute x set to 5.
+#Creating an Object
+my_object = MyClass()  # Creating an instance of MyClass
+print(my_object.x)  # Accessing the class attribute x
+#In this example, my_object is an instance of MyClass, and it can
+access the class attribute x, which is 5.
+#You can also define methods (functions) within a class to perform actions on the object's data.
+class MyClass:
+    def greet(self, name):
+        print("Hello, " + name + "!")  # Method to greet a person
+#In this example, MyClass has a method greet that takes a name as a parameter and prints a greeting message.
+
+
+#-----Python Polymorphism---
+#Polymorphism is a concept in OOP that allows objects of different classes to be treated as objects of a common superclass.
+#It allows you to define methods in a class that can be
+#used by objects of different classes, enabling flexibility and code reuse.
+class Animal:
+    def speak(self):
+        pass  # Base method to be overridden by subclasses
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"  # Dog's implementation of speak method
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"  # Cat's implementation of speak method
+#In this example, the Animal class has a base method speak that is overridden by the Dog and Cat subclasses.
+
+thisdict = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+
+print(len(thisdict))
+#In this example, the thisdict dictionary has three key-value pairs, and the len() function returns the number of items in the dictionary, which is 3.
+class Car:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Drive!")
+
+class Boat:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Sail!")
+
+class Plane:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Fly!")
+
+car1 = Car("Ford", "Mustang")       #Create a Car object
+boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
+plane1 = Plane("Boeing", "747")     #Create a Plane object
+
+for x in (car1, boat1, plane1):
+  x.move()
+#In this example, the Car, Boat, and Plane classes have a method move that is called on each object in the loop, demonstrating polymorphism.
+#The move method is defined in each class, and when called, it prints a message specific to the type of vehicle.
+
+class Vehicle:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Move!")
+
+class Car(Vehicle):
+  pass
+
+class Boat(Vehicle):
+  def move(self):
+    print("Sail!")
+
+class Plane(Vehicle):
+  def move(self):
+    print("Fly!")
+
+car1 = Car("Ford", "Mustang")       #Create a Car object
+boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
+plane1 = Plane("Boeing", "747")     #Create a Plane object
+
+for x in (car1, boat1, plane1):
+  print(x.brand)
+  print(x.model)
+  x.move()
+#In this example, the Vehicle class is a base class, and Car, Boat, and Plane are subclasses that inherit from it.
+#The move method is overridden in the Boat and Plane classes, demonstrating polymorphism.
