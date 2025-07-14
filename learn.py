@@ -1,4 +1,30 @@
 
+                #----Introduction to Python Programming Language----
+#Python is a high-level, interpreted programming language known for its simplicity, readability, and versatility.
+# It was created by Guido van Rossum and first released in 1991.
+# Python emphasizes code readability with a clean and easy-to-understand syntax, making it ideal for both beginners and professionals.
+# Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
+# It has a large standard library and a vibrant ecosystem of third-party packages,
+# making it suitable for a wide range of applications, from web development to data analysis and machine learning.
+
+             #Why is Python Commonly Used in:
+#1. Statistics
+#   - Python is widely used in statistics due to its powerful libraries like NumPy, pandas, and SciPy,
+#     which provide tools for data manipulation, analysis, and statistical modeling.
+#   - It allows statisticians to perform complex calculations, visualize data, and build statistical models efficiently.
+
+#2. Data Science & Machine Learning.
+#   - Python is a popular choice in data science and machine learning because of its simplicity and extensive libraries like scikit-learn, TensorFlow, and PyTorch.
+#   - It provides tools for data preprocessing, feature engineering, model training, and evaluation,
+#     making it easier for data scientists to build and deploy machine learning models.
+
+#3. Web Development & Software Development.
+#   - Python is commonly used in web development with frameworks like Django and Flask, which simplify the process of building web applications.
+#   - It is also used in software development for scripting, automation, and building desktop applications with libraries like Tkinter and PyQt.
+#   - Python's readability and ease of use make it a preferred language for rapid application development.
+
+
+
              #----LESS LEARN PYTHON BY MAYORM----
 print("Hello World!") #this is a string in simple words textual data
 print(5) #this is a number in simple words numerical data
@@ -553,4 +579,443 @@ print(text_with_quotes)
 #Example:
 special_characters = "This is a backslash: \\\\ and this is a single quote: \'"
 print(special_characters)
-#This will output: This is a backslash: \ and this is a single quote: '
+#This will output: This is a backslash: \ and this is a single quote: 
+
+       #------Python Lists---
+#A list in Python is a collection of items that can be of different data types, such as numbers, strings, or even other lists.
+#Lists are ordered, meaning the items have a specific order, and they are mutable, meaning you can change their content.
+#You can create a list by placing items inside square brackets [] and separating them with commas.
+my_list = [1, 2, 3, "apple", "banana", 4.5]  # A list with mixed data types
+thislist = ["apple", "banana", "cherry"]
+print(len(thislist))
+#This will output: 3, which is the number of items in the list.
+mylist = ["apple", "banana", "cherry"]
+print(type(mylist))
+#This will output: <class 'list'>, indicating that mylist is a list.
+#You can access individual items in a list using indexing, just like with strings.
+print(my_list[0])  # Accessing the first item (index 0)
+print(my_list[3])  # Accessing the fourth item (index 3)
+
+    #------Python Collections (Arrays)-------------
+#In Python, a collection is a data structure that allows you to store multiple items in a single variable.
+#There are several types of collections in Python, including:
+#1. Lists: Ordered collections of items that can be of different data types.
+#   Example: my_list = [1, 2, 3, "apple", "banana"]
+#2. Tuples: Similar to lists, but immutable (cannot be changed after creation).
+#   Example: my_tuple = (1, 2, 3, "apple", "banana")
+#3. Sets: Unordered collections of unique items.
+#   Example: my_set = {1, 2, 3, "apple", "banana"}
+#4. Dictionaries: Collections of key-value pairs, where each key is unique.
+#   Example: my_dict = {"name": "John", "age": 30, "city": "New York"}
+#5. Arrays: Similar to lists, but can only contain items of the same data type.
+#   Example: You can use the array module to create an array of integers.
+import array as arr
+my_array = arr.array('i', [1, 2, 3, 4, 5])  # 'i' indicates an array of integers.
+
+# ---Python If ... Else------
+#The if...else statement in Python is used to make decisions in your code based on certain conditions.
+#It allows you to execute different blocks of code depending on whether a condition is true or false.
+#Example:
+age = 18
+if age >= 18:
+    print("You are an adult.")
+else:
+    print("You are a minor.")
+#In this example, if the age is 18 or older, it prints "You are an adult." Otherwise, it prints "You are a minor."
+
+  #----Python Conditions and If statements--
+#You can use multiple conditions with elif (else if) to check for additional conditions.
+#Example:
+age = 16
+if age < 13:
+    print("You are a child.")
+elif age < 18:
+    print("You are a teenager.")
+else:
+    print("You are an adult.")
+#In this example, it checks if the age is less than 13, then checks if it's less than 18, and finally defaults to "You are an adult."
+#You can also use logical operators like and, or, and not to combine conditions.
+#Example:
+age = 20
+is_student = True
+if age >= 18 and is_student:
+    print("You are an adult student.")
+else:
+    print("You are either not an adult or not a student.")
+#In this example, it checks if the age is 18 or older and if the person is a student. If both conditions are true, it prints "You are an adult student."
+
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+elif a == b:
+    print("a and b are equal")
+else:
+    print("a is greater than b")
+
+   #---The pass Statement---
+#The pass statement in Python is a null operation; it does nothing when executed.
+#It is used as a placeholder in situations where you need a statement syntactically but don't want to execute any code.
+#For example, you might use it in an if statement or a function definition that you plan to implement later.
+#Example:
+def my_function():
+    pass  # This function does nothing for now
+if True:
+    pass  # This block does nothing for now
+#You can also use pass in loops or classes where you want to define a structure but haven't implemented it yet.
+#Example:
+class MyClass:
+    pass  # This class is empty for now
+#Using pass allows you to write code that is syntactically correct without having to fill in the details immediately.
+#It helps you avoid syntax errors while you plan or develop your code further.
+
+    #  ---Python Match---
+#The match statement is used to perform different actions based on different conditions.
+          #  -- The Python Match Statement--
+#It allows you to perform pattern matching, which is similar to switch statements in other languages but much more flexible and expressive.
+#The match statement checks a value (called the subject) against a series of patterns and executes the block of code for the first pattern that matches.
+#Example:
+def http_status(code):
+    match code:
+        case 200:
+            return "OK"
+        case 404:
+            return "Not Found"
+        case 500:
+            return "Server Error"
+        case _:
+            return "Unknown"
+#In this example, the match statement checks the value of code against different patterns (200, 404, 500).
+#If it matches one of the cases, it returns the corresponding message. The case _ acts as a default case, similar to the else statement.
+#You can also use match statements with more complex patterns, such as tuples or lists.
+#Example:
+point = (0, 1)
+
+match point:
+    case (0, 0):
+        print("Origin")
+    case (0, y):
+        print(f"Y-axis at {y}")
+    case (x, 0):
+        print(f"X-axis at {x}")
+    case (x, y):
+        print(f"Point at ({x}, {y})")
+#In this example, the match statement checks the point against different patterns to determine its position in a 2D coordinate system.
+#The match statement is a powerful feature in Python that allows you to write cleaner and more readable code when dealing with multiple conditions.
+#It can be used to simplify complex if-elif-else chains and make your code more maintainable.
+
+#examples 
+
+match expression:
+  case x:
+    code block
+  case y:
+    code block
+  case z:
+    code block
+#it does contain a logic issue when used in a match statement in Python.
+#This will not work as expected because x, y, and z are treated as capture patterns, not constants.
+# That means Python will always match the first case, because it thinks you're trying to assign value to x
+#The match statement evaluates the expression and checks it against each case.
+#If the expression matches a case, the corresponding code block is executed.
+#If no cases match, the code block under case _ (the default case) is executed.
+
+day = 4
+match day:
+  case 1:
+    print("Monday")
+  case 2:
+    print("Tuesday")
+  case 3:
+    print("Wednesday")
+  case 4:
+    print("Thursday")
+  case 5:
+    print("Friday")
+  case 6:
+    print("Saturday")
+  case 7:
+    print("Sunday")
+##In this example, the match statement checks the value of day and prints the corresponding day of the week.
+
+           #---Python While Loop--
+#A while loop in Python is used to repeatedly execute a block of code as long as a specified condition is true.
+#It allows you to perform actions until a certain condition is no longer met.
+#Python Loops
+
+#Python has two primitive loop commands:
+#1while loops
+#2for loops
+#Example:
+
+    #The while Loop
+#The while loop continues to execute as long as the specified condition is true.
+count = 0  # Initialize a counter variable
+while count < 5:  # Condition to check
+    print("Count is:", count)  # Print the current value of count
+    count += 1  # Increment the counter by 1
+#In this example, the while loop will continue to execute as long as count is less than 5.
+#It will print the current value of count and increment it by 1 in each iteration.
+#When the condition becomes false (when count reaches 5), the loop will stop executing.
+
+#Example:
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+#In this example, the while loop will print the numbers from 1 to 5.
+#If you want to stop the loop before the condition becomes false, you can use the break statement.
+#The break statement is used to exit the loop immediately, regardless of the condition.
+#Example:
+count = 0
+while count < 5:
+    if count == 3:  # Check if count is equal to 3
+        break  # Exit the loop when count is 3
+    print("Count is:", count)
+    count += 1
+#In this example, the loop will stop executing when count reaches 3, and it will not print "Count is: 3".
+
+i = 1
+while i < 6:
+  print(i)
+  if i == 3:
+    break
+  i += 1
+#In this example, the while loop will print the numbers from 1 to 2 and then stop when i equals 3.
+#You can also use the continue statement to skip the current iteration and move to the next one.
+#The continue statement is used to skip the rest of the code inside the loop for the current iteration and move to the next iteration.
+#Example:
+count = 0
+while count < 5:
+    count += 1  # Increment the counter by 1
+    if count == 3:  # Check if count is equal to 3
+        continue  # Skip the rest of the code for this iteration
+    print("Count is:", count)  # Print the current value of count
+#In this example, the loop will skip printing "Count is: 3" and continue with the next iteration.
+#In this example, the while loop will print the numbers from 1 to 5, but it will skip printing "Count is: 3".
+
+i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+  print(i)
+#In this example, the while loop will print the numbers from 1 to 6, but it will skip printing "3".
+#You can also use the else statement with a while loop.
+#The else statement is executed when the loop condition becomes false, meaning the loop has completed all iterations without being interrupted by a break statement.
+#Example:
+count = 0
+while count < 5:
+    print("Count is:", count)
+    count += 1
+else:
+    print("Loop has completed all iterations.")
+#In this example, the else block will execute after the while loop has completed all iterations, printing "Loop has completed all iterations."
+#In this example, the while loop will print the numbers from 1 to 5, and then the else block will execute, printing "Loop has completed all iterations."
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+else:
+  print("i is no longer less than 6")
+#In this example, the while loop will print the numbers from 1 to 5, and then the else block will execute, printing "i is no longer less than 6".
+
+     #  ---Python For Loop---
+#A for loop in Python is used to iterate over a sequence (like a list, tuple, string, or range) 
+# and execute a block of code multiple times, once for each item in the sequence.
+for item in sequence:
+    # do something with item
+#Example:
+#Using a for loop to iterate over a list of fruits
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(f"I like {fruit}")
+#In this example, the for loop iterates over each item in the fruits list and prints a message for each fruit.
+
+#You can also use a for loop to iterate over a string.
+for i in range(5):
+    print(i)
+#In this example, the for loop iterates over a range of numbers from 0 to 4 (5 is exclusive) and prints each number.
+
+
+for letter in "Python":
+    print(letter)
+#In this example, the for loop iterates over each character in the string "Python" and prints each letter.
+
+for x in "banana":
+  print(x)
+#In this example, the for loop iterates over each character in the string "banana" and prints each letter.
+
+#----The break Statement--
+#The break statement is used to exit a loop prematurely, meaning it stops the loop even if the condition is still true.
+#Example:
+
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+  if x == "banana":
+    break
+#In this example, the for loop will print "apple" and "banana", but it will stop when it reaches "banana" due to the break statement.
+
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    break
+  print(x)
+#In this example, the for loop will stop when it reaches "banana" and will not print "banana" or "cherry".
+#You can also use the continue statement to skip the current iteration and move to the next one.
+#The continue statement is used to skip the rest of the code inside the loop for the current iteration and move to the next iteration.
+#Example:
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    continue
+  print(x)
+#In this example, the for loop will skip printing "banana" and will print "apple" and "cherry".
+#You can also use the else statement with a for loop.
+#The else statement is executed when the loop has completed all iterations without being interrupted by a break statement.
+#Example:
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+    print(x)
+else:
+    print("Loop has completed all iterations.")
+#In this example, the else block will execute after the for loop has completed all iterations, printing "Loop has completed all iterations."
+#In this example, the for loop will print "apple", "banana", and "cherry", and then the else block will execute, printing "Loop has completed all iterations."
+
+
+            #---The range() Function--
+#To loop through a set of code a specified number of times, we can use the range() function,
+#which generates a sequence of numbers.
+#The range() function can take one, two, or three arguments:
+#1. range(stop): Generates numbers from 0 to stop-1.
+#2. range(start, stop): Generates numbers from start to stop-1.
+#3. range(start, stop, step): Generates numbers from start to stop-1, incrementing by step.
+#Example:
+for x in range(6):
+  print(x)
+#In this example, the for loop will print numbers from 0 to 5 (6 is exclusive).
+for x in range(2, 6):
+  print(x)
+#In this example, the for loop will print numbers from 2 to 5 (6 is exclusive).
+for x in range(2, 30, 3):
+  print(x)
+#In this example, the for loop will print numbers from 2 to 29, incrementing by 3 each time.
+#You can also use the range() function to create a list of numbers.
+numbers = list(range(10))  # Creates a list of numbers from 0 to 9
+print(numbers)
+#In this example, the list() function converts the range object into a list of numbers from 0 to 9.
+#You can also use the range() function to create a list of even or odd numbers.
+even_numbers = list(range(0, 20, 2))  # Creates a list of even numbers from 0 to 18
+print(even_numbers)
+odd_numbers = list(range(1, 20, 2))  # Creates a list of odd numbers from 1 to 19
+print(odd_numbers)
+#In this example, the range() function generates a list of even numbers from 0 to 18 and a list of odd numbers from 1 to 19.
+#You can also use the range() function to create a list of numbers in reverse order.
+reverse_numbers = list(range(10, 0, -1))  # Creates a list of numbers from 10 to 1
+print(reverse_numbers)
+#In this example, the range() function generates a list of numbers from 10 to 1 in reverse order.
+
+   #----Else in For Loop---~
+#You can use the else statement with a for loop to execute a block of code after the loop has completed all iterations.
+#The else block will execute only if the loop has not been interrupted by a break statement.
+for x in range(6):
+  print(x)
+else:
+  print("Finally finished!")
+#In this example, the for loop will print numbers from 0 to 5, and then the else block will execute, printing "Finally finished!".
+#You can also use the else statement with a for loop to execute a block of code after the loop has completed all iterations.
+for x in range(2, 6):
+  print(x)
+else:
+    print("Loop has completed all iterations.")
+#In this example, the for loop will print numbers from 2 to 5, and then the else block will execute, printing "Loop has completed all iterations.".
+
+for x in range(6):
+  if x == 3: break
+  print(x)
+else:
+  print("Finally finished!")
+#In this example, the for loop will print numbers from 0 to 2, and then it will stop when it reaches 3 due to the break statement.
+# The else block will not execute because the loop was interrupted by the break statement.
+
+          #~~~~~~~~Nested Loops~~~~~~~~
+#Nested loops are loops inside other loops. They allow you to iterate over multiple sequences or perform complex iterations.
+#Example:
+adj = ["red", "big", "tasty"]
+fruits = ["apple", "banana", "cherry"]
+
+for x in adj:
+  for y in fruits:
+    print(x, y)
+#In this example, the outer loop iterates over the list of adjectives, and for each adjective, the inner loop iterates over the list of fruits.
+#This will print all combinations of adjectives and fruits.
+
+            #~~~~~~~~Python Functions~~~~~~
+#A function in Python is a reusable block of code that performs a specific task.
+#You define it once and can use (or "call") it as many times as needed.
+#Creating a Function
+#To create a function, you use the def keyword followed by the function name and parentheses.
+#In Python a function is defined using the def keyword:
+def function_name(parameters):
+    # code block
+    return value  # Optional return statement
+#Example:
+def greet(name):
+    print("Hello, " + name + "!")
+#In this example, the function greet takes one parameter (name) and prints a greeting message.
+#Calling a Function
+#To use a function, you simply call it by its name and pass any required arguments.
+greet("Alice")  # Calling the function with the argument "Alice"
+#In this example, the function greet is called with the argument "Alice", and it will print "Hello, Alice!".
+#You can also call the function with different arguments.
+greet("Bob")  # Calling the function with the argument "Bob"
+#In this example, the function greet is called with the argument "Bob", and it will print "Hello, Bob!".
+#You can also define functions that return a value using the return statement.
+def add(a, b):
+    return a + b  # Returns the sum of a and b
+#In this example, the function add takes two parameters (a and b) and returns their sum.
+result = add(5, 3)  # Calling the function with arguments 5 and 3
+print("Sum:", result)  # Output: Sum: 8
+#In this example, the function add is called with the arguments 5 and 3, and it returns their sum (8), which is then printed.
+
+def my_function(fname, lname):
+  print(fname + " " + lname)
+
+my_function("Emil")
+my_function("Tobias", "Refsnes")  # Calling the function with two arguments
+my_function("Linus", "Tobias", "Refsnes")  # Calling the function with three arguments
+#In this example, the function my_function is called with different numbers of arguments.
+
+
+       #~~~Recursion~~~~~~
+#Recursion is a programming technique where a function calls itself to solve a problem.
+#Recursion is a programming technique where a function calls itself to solve a smaller version of a problem, until it reaches a base case that stops the recursion.
+def factorial(n):
+    if n == 0 or n == 1:  # Base case
+        return 1
+    else:
+        return n * factorial(n - 1)  # Recursive call
+#In this example, the function factorial calculates the factorial of a number n by calling itself with a smaller value (n - 1) until it reaches the base case (0 or 1).
+def factorial(n):
+    if n == 0:
+        return 1  # base case
+    else:
+        return n * factorial(n - 1)  # recursive call
+
+print(factorial(5))  # Output: 120
+#In this example, the function factorial is called with the argument 5, and it returns the factorial of 5 (120).
+#Recursion can be powerful, but it can also lead to performance issues if not used carefully, especially with deep recursion.
+
+def tri_recursion(k):
+  if(k > 0):
+    result = k + tri_recursion(k - 1)
+    print(result)
+  else:
+    result = 0
+  return result
+
+print("Recursion Example Results:")
+tri_recursion(6)
+#In this example, the function tri_recursion calculates the sum of numbers from k down to 0 using recursion.
+#It prints the intermediate results as it goes through the recursive calls.
