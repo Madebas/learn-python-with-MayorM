@@ -1135,3 +1135,577 @@ for x in (car1, boat1, plane1):
   x.move()
 #In this example, the Vehicle class is a base class, and Car, Boat, and Plane are subclasses that inherit from it.
 #The move method is overridden in the Boat and Plane classes, demonstrating polymorphism.
+
+       ##---Python Modules
+#A module in Python is a file containing Python code that can define functions, classes, and variables.
+#Consider a module to be the same as a code library.
+#A file containing a set of functions you want to include in your application.
+#You can create your own modules or use built-in modules provided by Python.
+#Creating a Module
+#To create a module, simply create a Python file with a .py extension and define functions
+# or classes in it.
+#For example, create a file named my_module.py with the following content:
+def greet(name):
+    print("Hello, " + name + "!")  # Function to greet a person
+#In this example, my_module.py defines a function greet that takes a name as a parameter and prints a greeting message.
+#Using a Module
+#To use a module, you can import it into your Python script using the import statement.
+import my_module  # Importing the module
+my_module.greet("Alice")  # Calling the function from the module
+#In this example, the my_module module is imported, and the greet function is called with the argument "Alice", printing "Hello, Alice!".
+#You can also import specific functions or classes from a module using the from keyword.
+from my_module import greet  # Importing the greet function from the module
+greet("Bob")  # Calling the function directly
+#In this example, the greet function is imported directly from the my_module module, allowing you to call it without prefixing it with the module name.
+
+        #Variables in Module
+#You can also define variables in a module and use them in your script.
+my_variable = "Hello, World!"  # Variable in the module
+#In the my_module.py file, you can define a variable like this:
+def greet(name):
+    print("Hello, " + name + "!")  # Function to greet a person
+my_variable = "Hello, World!"  # Variable in the module
+#In your script, you can access the variable like this:
+import my_module  # Importing the module
+print(my_module.my_variable)  # Accessing the variable from the module
+#In this example, the my_variable variable is defined in the my_module module, and it can be accessed in your script after importing the module.
+
+
+                  #----Python PIP---
+#PIP (Python Package Installer) is a package manager for Python that allows you to install 
+# and manage additional libraries and dependencies that are not part of the standard Python library.
+# PIP is a package manager for Python packages, or modules if you like.
+# It allows you to install and manage additional libraries and dependencies that are not part of the standard Python library.              
+#What is a Package?
+#A package is a collection of modules that are organized in a specific way to provide functionality.
+#Packages can be installed using PIP, and they can be used in your Python scripts to extend functionality.
+#Installing Packages
+#To install a package using PIP, you can use the following command in your terminal or command prompt:
+pip install package_name  # Replace package_name with the name of the package you want to install
+#For example, to install the requests package, you would run:
+pip install requests
+#In this example, the requests package is installed, which allows you to make HTTP requests in your Python scripts.
+#Using Installed Packages
+#After installing a package, you can import it into your Python script and use its functionality.
+import requests  # Importing the requests package
+response = requests.get("https://api.example.com/data")  # Making a GET request
+print(response.json())  # Printing the JSON response
+#In this example, the requests package is imported, and a GET request is made to a specified URL. The JSON response is then printed.
+
+# #Handling files in python
+#Python File Open
+#To open a file in Python, you can use the built-in open() function.
+#The open() function takes two arguments: the file name and the mode in which you want to open the file.
+#The mode can be 'r' for reading, 'w' for writing, 'a' for appending, and 'b' for binary mode.
+#Example:
+#Opening a file for reading
+file = open("example.txt", "r")  # Open the file in read mode
+#Reading the contents of the file
+content = file.read()  # Read the entire file content
+print(content)  # Print the content of the file
+#Closing the file
+file.close()  # Close the file after reading
+#In this example, the file "example.txt" is opened in read mode, its contents are read and printed, and then the file is closed.
+#Opening a file for writing
+file = open("output.txt", "w")  # Open the file in write mode
+#Writing to the file
+file.write("Hello, World!\n")  # Write a line to the file
+file.write("This is a test file.\n")  # Write another line to the file
+#Closing the file
+file.close()  # Close the file after writing
+#In this example, a new file "output.txt" is created (or overwritten if it already exists) in write mode, and two lines are written to it.
+#Opening a file for appending
+file = open("output.txt", "a")  # Open the file in append mode
+#Appending to the file
+file.write("This line is appended to the file.\n")  # Append a line to the file
+#Closing the file
+file.close()  # Close the file after appending
+#In this example, the existing file "output.txt" is opened in append mode, and a new line is added to the end of the file.
+#Python Delete File
+#To delete a file in Python, you can use the os module's remove() function.
+import os  # Importing the os module
+#Deleting a file
+if os.path.exists("output.txt"):  # Check if the file exists
+    os.remove("output.txt")  # Delete the file
+    print("File deleted successfully.")
+else:
+    print("The file does not exist.")
+#In this example, the os module is imported, and the remove() function is used to delete the file "output.txt" if it exists.
+
+
+          #---Python exercises---
+#1. Write a Python program to find the largest of three numbers.
+def largest_of_three(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+#Example usage
+print("Largest of 3 numbers:", largest_of_three(10, 20, 30))  # Output: 30
+
+#2. Write a Python program to check if a number is prime.
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+#Example usage
+print("Is 29 prime?", is_prime(29))  # Output: True
+#3. Write a Python program to calculate the factorial of a number.
+def factorial(n):
+    if n < 0:
+        return "Factorial is not defined for negative numbers"
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        result = 1
+        for i in range(2, n + 1):
+            result *= i
+        return result
+#Example usage
+print("Factorial of 5:", factorial(5))  # Output: 120
+
+#4.Create and Print Variables
+#Create variables to store your name (string), age (integer), and height in meters (float).
+#Print a sentence using these variables, e.g., "My name is [name], I am [age] years old, and my height is [height] meters."
+#Use the type() function to print the data type of each variable.
+
+name = "Simon Madeba Odhiambo"
+age = 25
+height = 1.75
+
+# Printing a sentence using the variables
+print(f"My name is {name}, I am {age} years old, and my height is {height} meters.")
+
+# Printing the data types of each variable
+print("Data types:")
+print("Name:", type(name))
+print("Age:", type(age))
+print("Height:", type(height))
+
+#Variable Reassignment
+#Create a variable score and assign it the value 100.
+#Reassign score to 150 and print it.
+#Create a boolean variable is_active set to True and print it.
+score = 100
+print("Initial score:", score)
+# Reassigning the score variable
+score = 150
+print("Reassigned score:", score)
+# Creating a boolean variable
+is_active = True
+print("Is active:", is_active)
+
+#5 Assign three different values (e.g., 10, 20, 30) to three variables (x, y, z) in a single line.
+#Print all three variables.
+#Assign the same string value (e.g., "Python") to three variables (a, b, c) in a single line and print them.
+x, y, z = 10, 20, 30
+print("Values of x, y, z:", x, y, z)
+a = b = c = "Python"
+print("Values of a, b, c:", a, b, c)
+
+#6 Use input() to ask the user for their first name and last name.
+#Concatenate the names with a space between them and print a greeting, e.g., "Hello, [full name]!"
+first_name = input("Enter your first name: ")
+last_name = input("Enter your last name: ")
+full_name = first_name + " " + last_name
+print(f"Hello, {full_name}!")
+
+#7 Ask the user for their current age using input().
+#Convert the input to an integer and calculate their age next year.
+#Print a message like "Next year, you will be [age] years old."
+current_age = int(input("Enter your current age: "))
+next_year_age = current_age + 1
+print(f"Next year, you will be {next_year_age} years old.")
+
+#8. Create a string variable with the value "Python Programming".
+#Use the len() function to print the length of the string.
+#Print the first and last characters of the string using indexing.
+my_string = "Python Programming"
+string_length = len(my_string)
+print("Length of the string:", string_length)
+first_char = my_string[0]  # First character
+last_char = my_string[-1]  # Last character
+print("First character:", first_char)
+print("Last character:", last_char)
+
+#9. Create a variable price with the value 99.99.
+#Convert it to a string and concatenate it with the text " dollars" (e.g., "99.99 dollars").
+#Print the result.
+price = 99.99
+price_str = str(price) + " dollars"
+print("Price:", price_str)
+
+#10. Create a variable temperature with the value 36.6.
+# Convert it to an integer and print both the original and converted values.
+temperature = 36.6
+temperature_int = int(temperature)
+print("Original temperature:", temperature)
+print("Converted temperature:", temperature_int)
+
+#11. Create a string variable with the value "Hello, World!".
+#Use slicing to print:
+#The substring "Hello".
+#The substring "World".
+#The string in reverse order.
+my_string = "Hello, World!"
+hello_substring = my_string[:5]  # "Hello"
+world_substring = my_string[7:12]  # "World"
+reversed_string = my_string[::-1]  # "dlroW ,olleH"
+print("Substring 'Hello':", hello_substring)
+print("Substring 'World':", world_substring)
+print("Reversed string:", reversed_string)
+
+#12. Create a string variable with the value " Welcome to Python! ".
+#Use string methods to:
+#Remove leading and trailing whitespace.
+#Convert the string to uppercase.
+#Replace "Python" with "Programming".
+#Split the string into a list of words.
+
+my_string = " Welcome to Python! "
+trimmed_string = my_string.strip()  # Remove leading and trailing whitespace
+uppercase_string = trimmed_string.upper()  # Convert to uppercase
+replaced_string = uppercase_string.replace("PYTHON", "PROGRAMMING")  # Replace "Python" with "Programming"
+split_string = replaced_string.split()  # Split into a list of words
+print("Trimmed string:", trimmed_string)
+print("Uppercase string:", uppercase_string)
+print("Replaced string:", replaced_string)
+print("Split string:", split_string)
+
+#13. Create a list of five fruits (e.g., ["apple", "banana", "cherry", "date", "elderberry"]).
+#Print the entire list.
+#Print the second and last items in the list using indexing.
+fruits = ["apple", "banana", "cherry", "date", "elderberry"]
+print("Fruits list:", fruits)  # Print the entire list
+print("Second fruit:", fruits[1])  # Print the second item
+print("Last fruit:", fruits[-1])  # Print the last item
+
+#14. Create a list of three numbers.
+#Change the second number to 100.
+#Append a new number to the list.
+#Print the modified list.
+numbers = [10, 20, 30]  # Create a list of three numbers
+numbers[1] = 100  # Change the second number to 100
+numbers.append(40)  # Append a new number to the list
+print("Modified numbers list:", numbers)  # Print the modified list
+
+#15. Create a list of numbers from 1 to 10.
+#Use slicing to print:
+#The first three numbers.
+#The last three numbers.
+#Every second number (e.g., [1, 3, 5, 7, 9]).
+
+numbers = list(range(1, 11))  # Create a list of numbers from 1 to 10
+first_three = numbers[:3]  # First three numbers
+last_three = numbers[-3:]  # Last three numbers
+every_second = numbers[::2]  # Every second number
+print("First three numbers:", first_three)
+print("Last three numbers:", last_three)
+print("Every second number:", every_second)
+
+#16. Ask the user for their age using input().
+#Use if, elif, and else to categorize them as:
+#"Child" if under 13.
+#"Teenager" if 13–17.
+#"Adult" if 18 or older.
+#Print the category.
+
+age = int(input("Enter your age: "))  # Ask the user for their age
+if age < 13:
+    category = "Child"
+elif 13 <= age <= 17:
+    category = "Teenager"
+elif age >= 18:
+    category = "Adult"
+print("You are categorized as:", category)  # Print the category
+
+#17. Ask the user to input a number.
+#Use an if statement to check if the number is even or odd (use the modulo operator %).
+#Print "Even" or "Odd" accordingly.
+number = int(input("Enter a number: "))  # Ask the user for a number
+if number % 2 == 0:
+    print("Even")  # Print "Even" if the number is even
+else:
+    print("Odd")
+#In this example, the user is prompted to enter a number, and the program checks if it is even or odd using the modulo operator (%).
+# If the number is divisible by 2, it is even; otherwise, it is odd.
+
+#18. Write a function check_number(num) that takes a number as input.
+#Use an if statement to check if the number is positive, negative, or zero.
+#For one of the conditions, use the pass statement as a placeholder.
+#Print a message for the other conditions
+def check_number(num):
+    if num > 0:
+        print("The number is positive.")  # Message for positive numbers
+    elif num < 0:
+        print("The number is negative.")  # Message for negative numbers
+    else:
+        pass  # Placeholder for zero condition
+        print("The number is zero.")
+
+
+
+#Example usage
+check_number(10)  # Output: The number is positive.
+check_number(-5)  # Output: The number is negative.
+check_number(0)   # Output: The number is zero.
+#In this example, the function check_number takes a number as input and checks if it is positive, negative, or zero.
+# If the number is positive, it prints a message indicating that; if negative, it prints a different message; and if zero, it uses the pass statement as a placeholder.
+
+
+#19. Use a while loop to print numbers from 1 to 10.
+#Add an else block to print "Loop completed!" when the loop finishes.
+i = 1
+while i <= 10:
+    print(i)  # Print the current number
+    i += 1  # Increment the number by 1
+else:
+    print("Loop completed!")
+#In this example, a while loop is used to print numbers from 1 to 10.
+# After the loop finishes, the else block executes, printing "Loop completed!".
+
+#20. Create a list of colors (e.g., ["red", "blue", "green"]).
+#Use a for loop to print each color with a message like "I like [color]".
+colors = ["red", "blue", "green"]  # Create a list of colors
+for color in colors:
+    print(f"I like {color}")  # Print a message for each color
+#In this example, a for loop iterates over the list of colors and prints a message for each color.
+
+#21. Write a for loop to iterate over numbers from 1 to 10.
+#Use break to stop the loop at 6.
+#Write another for loop to print numbers from 1 to 10 but use continue to skip 5
+for i in range(1, 11):
+    if i == 6:
+        break  # Stop the loop at 6
+    print(i)  # Print the current number
+print("Loop stopped at 6.")
+for i in range(1, 11):
+    if i == 5:
+        continue  # Skip the number 5
+    print(i)  # Print the current number
+#In this example, the first for loop iterates over numbers from 1 to 10 and stops when it reaches 6 using the break statement.
+# The second for loop iterates over the same range but skips the number 5 using the continue statement.
+
+#22. Create two lists: adjectives (e.g., ["big", "small"]) and nouns (e.g., ["cat", "dog"]).
+#Use nested for loops to print all combinations, e.g., "big cat", "big dog", "small cat", "small dog".
+adjectives = ["big", "small"]  # List of adjectives
+nouns = ["cat", "dog"]  # List of nouns
+for adj in adjectives:
+    for noun in nouns:
+        print(f"{adj} {noun}")  # Print the combination of adjective and noun
+#In this example, nested for loops are used to iterate over the adjectives and nouns lists, printing all combinations of adjectives and nouns.
+
+#23. Use range() in a for loop to:
+#Print numbers from 5 to 15.
+#Print even numbers from 10 to 20.
+#Print numbers from 10 to 1 in reverse order.
+for i in range(5, 16):
+    print(i)  # Print numbers from 5 to 15
+for i in range(10, 21, 2):
+    print(i)  # Print even numbers from 10 to 20
+for i in range(10, 0, -1):
+    print(i)  # Print numbers from 10 to 1 in reverse order
+#In this example, the range() function is used in a for loop to print numbers in different ranges and orders.
+
+#24. Define a function say_hello(name) that takes a name as input and prints "Hello, [name]!".
+#Call the function with two different names.
+def say_hello(name):
+    print(f"Hello, {name}!")  # Function to greet a person
+#Example usage
+say_hello("Alice")  # Output: Hello, Alice!
+say_hello("Bob")  # Output: Hello, Bob!
+#In this example, the function say_hello takes a name as input and prints a greeting message.
+
+#25. Define a function square(number) that takes a number and returns its square.
+#Call the function with different inputs (e.g., 4, 7) and print the results.
+def square(number):
+    return number ** 2  # Return the square of the number
+#Example usage
+print("Square of 4:", square(4))  # Output: 16
+print("Square of 7:", square(7))  # Output: 49
+#In this example, the function square takes a number as input and returns its square. The function is called with different inputs, and the results are printed.
+
+#26. Write a recursive function sum_numbers(n) that calculates the sum of numbers from 1 to n.
+#For example, sum_numbers(5) should return 1 + 2 + 3 + 4 + 5 = 15.
+#Test the function with n=5 and n=3.
+def sum_numbers(n):
+    if n <= 0:
+        return 0  # Base case: if n is 0 or negative, return 0
+    else:
+        return n + sum_numbers(n - 1)  # Recursive call to sum the numbers
+#Example usage
+print("Sum of numbers from 1 to 5:", sum_numbers(5))  # Output: 15
+print("Sum of numbers from 1 to 3:", sum_numbers(3))  # Output: 6
+#In this example, the function sum_numbers calculates the sum of numbers from 1 to n using recursion.
+# The base case is when n is 0 or negative, returning 0. Otherwise, it adds n to the result of the recursive call with n - 1.
+
+#27. Write a recursive function countdown(n) that prints numbers from n down to 1, then prints "Done!".
+#Test with n=5.
+def countdown(n):
+    if n <= 0:
+        print("Done!")  # Base case: when n is 0 or negative, print "Done!"
+    else:
+        print(n)  # Print the current number
+        countdown(n - 1)  # Recursive call with n - 1
+#Example usage
+countdown(5)  # Output: 5, 4, 3, 2, 1, Done!
+#In this example, the function countdown prints numbers from n down to 1 using recursion.
+# The base case is when n is 0 or negative, at which point it prints "Done!". Otherwise, it prints the current number and calls itself with n - 1.
+
+#28. Import the array module and create an array of integers (e.g., [1, 2, 3, 4]).
+#Append a new number to the array.
+#Print the array and its type.
+import array as arr  # Importing the array module
+my_array = arr.array('i', [1, 2, 3, 4])  # Create an array of integers
+my_array.append(5)  # Append a new number to the array
+print("Array:", my_array)  # Print the array
+print("Type of array:", type(my_array))  # Print the type of the array
+#In this example, the array module is imported, and an array of integers is created.
+# A new number is appended to the array, and both the array and its type are printed.
+
+#29. Create a file called greeting.txt and write "Hello, Python!" to it.
+#Open the file in append mode and add another line: "I am learning file handling."
+#Read and print the entire file content.
+with open("greeting.txt", "w") as file:  # Create and open the file in write mode
+    file.write("Hello, Python!\n")  # Write the first line to the file
+with open("greeting.txt", "a") as file:  # Open the file in append mode
+    file.write("I am learning file handling.\n")  # Append another line to the file
+with open("greeting.txt", "r") as file:  # Open the file in read mode
+    content = file.read()  # Read the entire file content
+print("File content:\n", content)  # Print the content of the file
+#In this example, a file named greeting.txt is created, and two lines are written to it.
+# The file is then opened in read mode to read and print its content.
+
+#30. Write a program to check if greeting.txt exists using os.path.exists().
+#If it exists, delete it using os.remove() and print "File deleted."
+#If it doesn’t exist, print "File not found."
+import os  # Importing the os module
+file_path = "greeting.txt"  # Path to the file
+if os.path.exists(file_path):  # Check if the file exists
+    os.remove(file_path)  # Delete the file
+    print("File deleted.")
+else:
+    print("File not found.")
+#In this example, the os module is used to check if the file greeting.txt exists.
+# If it exists, the file is deleted, and a message is printed. If it doesn't exist, a different message is printed.
+
+#31. Define a class Person with attributes name and age.
+#Create a method introduce() that prints "Hi, I’m [name] and I’m [age] years old."
+#Create two instances of the class and call the introduce() method for each.
+class Person:
+    def __init__(self, name, age):
+        self.name = name  # Initialize the name attribute
+        self.age = age  # Initialize the age attribute
+
+    def introduce(self):
+        print(f"Hi, I'm {self.name} and I'm {self.age} years old.")  # Method to introduce the person
+#Example usage
+person1 = Person("Alice", 30)  # Create an instance of Person
+person2 = Person("Bob", 25)  # Create another instance of Person
+person1.introduce()  # Call the introduce method for person1
+person2.introduce()  # Call the introduce method for person2
+#In this example, a class Person is defined with attributes name and age, and a method introduce() that prints a message.
+# Two instances of the class are created
+# and the introduce() method is called for each instance to print their introductions.
+
+
+#32. Define a base class Animal with a method sound() that uses pass.
+#Create two subclasses Dog and Cat that override sound() to return "Woof!" and "Meow!", respectively.
+#Create a list of Dog and Cat objects and loop through it to call sound() on each.
+class Animal:
+    def sound(self):
+        pass  # Base method to be overridden by subclasses
+class Dog(Animal):
+    def sound(self):
+        return "Woof!"  # Dog's implementation of sound method
+class Cat(Animal):
+    def sound(self):
+        return "Meow!"  # Cat's implementation of sound method
+#Example usage
+animals = [Dog(), Cat()]  # Create a list of Dog and Cat objects
+for animal in animals:
+    print(animal.sound())  # Call the sound method for each animal
+#In this example, a base class Animal is defined with a method sound() that uses pass.
+# Two subclasses Dog and Cat are created that override the sound() method to return their respective sounds.
+# A list of Dog and Cat objects is created, and the sound() method is called for each object in the list, printing their sounds.
+
+#33. Import the random module.
+#Generate and print a random integer between 1 and 100.
+#Generate and print a random float between 0.0 and 1.0 using random.uniform().
+import random  # Importing the random module
+random_integer = random.randint(1, 100)  # Generate a random integer between 1 and 100
+random_float = random.uniform(0.0, 1.0)  # Generate a random float between 0.0 and 1.0
+print("Random integer:", random_integer)  # Print the random integer
+print("Random float:", random_float)  # Print the random float
+#In this example, the random module is imported, and a random integer between 1 and 100 is generated using randint().
+# A random float between 0.0 and 1.0 is generated using uniform(), and both values are printed.
+
+#34. Create a list of five activities (e.g., ["read", "code", "play", "sleep", "eat"]).
+#Use random.choice() to select and print a random activity.
+
+activities = ["read", "code", "play", "sleep", "eat"]  # List of activities
+random_activity = random.choice(activities)  # Select a random activity from the list
+print("Random activity:", random_activity)  # Print the selected random activity
+#In this example, a list of activities is created, and random.choice() is used to select a random activity from the list, which is then printed.
+
+#35. Write a function check_status(code) that takes an HTTP status code and uses a match statement to return:
+#"Success" for code 200.
+#"Not Found" for code 404.
+#"Error" for code 500.
+#"Unknown" for any other code.
+#Test the function with codes 200, 404, 500, and 403.
+def check_status(code):
+    match code:
+        case 200:
+            return "Success"  # Return "Success" for code 200
+        case 404:
+            return "Not Found"  # Return "Not Found" for code 404
+        case 500:
+            return "Error"  # Return "Error" for code 500
+        case _:
+            return "Unknown"  # Return "Unknown" for any other code
+#Example usage
+print("Status code 200:", check_status(200))  # Output: Success
+print("Status code 404:", check_status(404))  # Output: Not Found
+print("Status code 500:", check_status(500))  # Output: Error
+print("Status code 403:", check_status(403))  # Output: Unknown
+#In this example, the function check_status takes an HTTP status code as input and uses a match statement to return a corresponding message based on the code.
+# The function is tested with different status codes, and the results are printed.
+
+#36. Ask the user to input a number from 1 to 7.
+#Use a match statement to print the corresponding day of the week (e.g., 1 = Monday, 2 = Tuesday, etc.).
+#Include a default case for invalid inputs.
+def get_day_of_week(number):
+    match number:
+        case 1:
+            return "Monday"
+        case 2:
+            return "Tuesday"
+        case 3:
+            return "Wednesday"
+        case 4:
+            return "Thursday"
+        case 5:
+            return "Friday"
+        case 6:
+            return "Saturday"
+        case 7:
+            return "Sunday"
+        case _:
+            return "Invalid input, please enter a number between 1 and 7."
+#Example usage
+try:
+    user_input = int(input("Enter a number from 1 to 7: "))  # Ask the user for input
+    day = get_day_of_week(user_input)  # Get the corresponding day of the week
+    print("Day of the week:", day)  # Print the result
+except ValueError:
+    print("Invalid input, please enter a valid number.")
+#In this example, the function get_day_of_week takes a number as input and uses a match statement to return the corresponding day of the week.
+# If the input is not between 1 and 7, it returns an invalid input message.
+# The user is prompted to enter a number, and the function is called with that input. If the input is not a valid integer, an error message is printed.
+
